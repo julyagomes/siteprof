@@ -5,7 +5,7 @@ export const Rodape = styled.footer`
   display: flex;
   align-items: center;
   height: 4rem;
-  background-color: ${colors.secondary};
+  background-color: ${colors.primary};
   div {
     display: flex;
     align-items: center;
