@@ -9,13 +9,13 @@ export const Section = styled.section`
   flex-direction: column;
   margin-top: 2rem;
   h1 {
-    color: ${colors.primary};
+    color: ${colors.black};
     font-weight: 500;
     margin-bottom: 2rem;
     font-size: 2rem;
   }
   form {
-    background-color: ${colors.thirdLight};
+    background-color: ${colors.third};
     border: 0.2rem solid ${colors.third};
     border-radius: 1rem;
     padding: 1.5rem;

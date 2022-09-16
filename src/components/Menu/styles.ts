@@ -3,7 +3,7 @@ import { colors } from "styles/GlobalStyle"
 
 export const Cabecalho = styled.header`
   display: flex;
-  border-bottom: 0.5rem solid ${colors.secondary};
+  border-bottom: 0.5rem solid ${colors.primary};
   picture svg {
     height: 6rem;
     width: 6rem;
@@ -22,7 +22,7 @@ export const Cabecalho = styled.header`
         a {
           text-decoration: none;
           font-size: 1.2em;
-          color: ${colors.primary};
+          color: ${colors.secondary};
         }
       }
     }

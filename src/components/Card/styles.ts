@@ -3,7 +3,7 @@ import { colors } from "styles/GlobalStyle"
 
 export const Card = styled.div`
   div {
-    background-color: ${colors.thirdLight};
+    background-color: ${colors.black};
     border-radius: 0.5rem;
     padding: 0.4rem;
     h3, h4 {
@@ -12,7 +12,7 @@ export const Card = styled.div`
     div {
       display: flex;
       span {
-        background-color: ${colors.third};
+        background-color: ${colors.black};
         border-radius: 0.5rem;
         padding: 0.4rem;
         margin: 0 0.4rem 0 0;
