@@ -29,7 +29,7 @@ export const Section = styled.section`
         height: 3rem;
         width: 3rem;
         padding: 0.3rem;
-        color: ${colors.third};
+        color: ${colors.primaryLight};
       }
       input {
         width: 100%;
