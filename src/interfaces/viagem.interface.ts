@@ -1,21 +1,21 @@
-export interface IMessageData {
+export interface IViagemData {
     id?: number
     title?: string
-    message?: string
+    viagem?: string
     created_at?: string
     user?: {
       name: string
     }
-    messageTopic?: {
+    viagemTopic?: {
       id: number
       name: string
     }[]
   }
   
-  export interface IMessageForm {
+  export interface IViagemForm {
     id?: number
     title?: string
-    message?: string
+    viagem?: string
     created_at?: string
     topic?: number[] | undefined
   }
