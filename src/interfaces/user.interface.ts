@@ -30,8 +30,8 @@ export interface IAuthProvider {
 }
 export interface IErrorResponse {
   status: string
-  message: string
+  viagem: string
   errors?: {
-    message: string
+    viagem: string
   }[]
 }

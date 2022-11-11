@@ -29,7 +29,7 @@ const AdViagem = () => {
     async (id: number) => {
       confirmAlert({
         title: "Atenção",
-        viagem: "Tem certeza que deseja apagar o item selecionado?",
+        message: "Tem certeza que deseja apagar o item selecionado?",
         buttons: [
           {
             label: "SIM",

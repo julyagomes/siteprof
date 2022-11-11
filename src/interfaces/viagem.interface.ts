@@ -17,5 +17,5 @@ export interface IViagemData {
     title?: string
     viagem?: string
     created_at?: string
-    topic?: number[] | undefined
+    
   }

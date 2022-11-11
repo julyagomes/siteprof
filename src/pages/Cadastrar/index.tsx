@@ -29,9 +29,9 @@ const Cadastrar = () => {
       navigate('/login')
     } catch (error) {
       const err = error as AxiosError<IErrorResponse>
-      let messages = err.response?.data.message
+      let messages = err.response?.data.viagem
       if (err.response?.data.errors) {
-        messages = err.response?.data.errors?.map((i) => i.message)
+        messages = err.response?.data.errors?.map((i) => i.viagem)
           .reduce((total, cur) => `${total} ${cur}`)
       }
       toast.error(messages)

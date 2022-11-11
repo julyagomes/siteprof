@@ -3,21 +3,19 @@ import * as S from "./styles";
 import { LoadingComponent, ButtonComponent } from "components";
 import { FcDatabase, FcUndo } from "react-icons/fc";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import { apiViagem, apiTopic } from "services/data";
+import { apiViagem} from "services/data";
 import { toast } from "react-toastify";
 import { AxiosError } from "axios";
-import { IViagemForm } from "interfaces/Viagem.interface";
+import { IViagemForm } from "interfaces/viagem.interface";
 import { IErrorResponse } from "interfaces/user.interface";
-import { ITopicData } from "interfaces/topic.interface";
+
 
 const ViagemStore = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [topics, setTopics] = useState<ITopicData[]>()
   const navigate = useNavigate();
   const [formData, setFormData] = useState<IViagemForm>({
     title: '',
-    Viagem: '',
-    topic: []
+    viagem: '',
   })
   const { id } = useParams<{ id: string }>();
 
@@ -34,9 +32,9 @@ const ViagemStore = () => {
       navigate('/adm/Viagem')
     } catch (error) {
       const err = error as AxiosError<IErrorResponse>
-      let Viagems = err.response?.data.Viagem
+      let Viagems = err.response?.data.viagem
       if (err.response?.data.errors) {
-        Viagems = err.response?.data.errors?.map((i) => i.Viagem)
+        Viagems = err.response?.data.errors?.map((i) => i.viagem)
           .reduce((total, cur) => `${total} ${cur}`)
       }
       toast.error(Viagems)
@@ -47,25 +45,7 @@ const ViagemStore = () => {
     setFormData((state: IViagemForm) => ({ ...state, ...e }))
   }
 
-  async function handleCheck(e: string) {
-    let topic: number[] = []
-    if (formData.topic?.includes(Number(e))) {
-      topic = formData.topic.filter((i) => i !== Number(e))
-    } else {
-      topic.push(Number(e))
-    }
-    setFormData((state: IViagemForm) => ({ ...state, topic }))
-  }
-
   useEffect(() => {
-    const loadTopics = async () => {
-      try {
-        const response = await apiTopic.index()
-        setTopics(response.data)
-      } catch (error) {
-        console.log(error);
-      }
-    }
     if (Number(id) > 0) {
       const fetchData = async (id: number) => {
         try {
